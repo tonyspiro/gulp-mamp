@@ -1,0 +1,15 @@
+{
+  "name": "gulp-mamp",
+  "version": "0.0.0",
+  "description": "Gulp MAMP alows you to configure, start and stop your mamp server from the terminal.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Gulp",
+    "MAMP"
+  ],
+  "author": "Tony Spiro <tspiro@tonyspiro.com> (http://tonyspiro.com/)",
+  "license": "ISC"
+}
