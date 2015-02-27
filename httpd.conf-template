@@ -147,7 +147,7 @@ AddType application/x-httpd-php .php .phtml
 # It is usually good practice to create a dedicated user and group for
 # running httpd, as with most system services.
 #
-User tonyspiro
+User $user
 Group #-1
 
 </IfModule>
