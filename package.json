@@ -1,6 +1,6 @@
 {
   "name": "gulp-mamp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Gulp MAMP alows you to configure, start and stop your mamp server from the terminal.",
   "main": "index.js",
   "scripts": {
@@ -11,5 +11,13 @@
     "MAMP"
   ],
   "author": "Tony Spiro <tspiro@tonyspiro.com> (http://tonyspiro.com/)",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tonyspiro/gulp-mamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tonyspiro/gulp-mamp/issues"
+  },
+  "homepage": "https://github.com/tonyspiro/gulp-mamp"
 }
