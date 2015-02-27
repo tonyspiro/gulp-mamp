@@ -1,6 +1,7 @@
 /* !!!! CONFIGURE !!!!
 ================================ */
 var options = {};
+options.user = 'yourusername';
 options.port = 8888;
 options.site_path = '/your/full/site/path'; // something like /Users/username/sites/mymampsite 
 
