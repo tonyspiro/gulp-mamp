@@ -20,3 +20,5 @@ gulp.task('start', function(cb){
 gulp.task('stop', function(cb){
 	mamp(options, 'stop', cb);
 });
+
+gulp.task('mamp', ['config', 'start']);
