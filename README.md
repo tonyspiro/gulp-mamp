@@ -41,7 +41,6 @@ gulp.task('mamp', ['config', 'start']);
 ### Getting Started (and Stopped!)
 Once you have your gulpfile.js file configged, you can run the following commands to config, start and stop MAMP.
 ```
-gulp config
-gulp start
+gulp mamp
 gulp stop
 ```
