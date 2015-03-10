@@ -5,13 +5,10 @@ var exec = require('child_process').exec;
 module.exports = function (options, task, cb) {
 
 	function sudo(port) {
-
-		var val = '';;
-
+		var val = '';
 		if(port === 80) {
 			val = 'sudo ';
 		}
-
 		return val;
 	}
 
