@@ -1,102 +1,26 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'init' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
-4 verbose publish [ '.' ]
-5 verbose cache add [ '.', null ]
-6 verbose cache add name=undefined spec="." args=[".",null]
-7 verbose parsed url { protocol: null,
-7 verbose parsed url   slashes: null,
-7 verbose parsed url   auth: null,
-7 verbose parsed url   host: null,
-7 verbose parsed url   port: null,
-7 verbose parsed url   hostname: null,
-7 verbose parsed url   hash: null,
-7 verbose parsed url   search: null,
-7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: '.',
-7 verbose parsed url   path: '.',
-7 verbose parsed url   href: '.' }
-8 silly lockFile 3a52ce78- .
-9 verbose lock . /Users/tonyspiro/.npm/3a52ce78-.lock
-10 verbose tar pack [ '/Users/tonyspiro/.npm/gulp-mamp/0.0.1/package.tgz', '.' ]
-11 verbose tarball /Users/tonyspiro/.npm/gulp-mamp/0.0.1/package.tgz
-12 verbose folder .
-13 info prepublish gulp-mamp@0.0.1
-14 silly lockFile 1f1177db-tar tar://.
-15 verbose lock tar://. /Users/tonyspiro/.npm/1f1177db-tar.lock
-16 silly lockFile 1c085d8a--npm-gulp-mamp-0-0-1-package-tgz tar:///Users/tonyspiro/.npm/gulp-mamp/0.0.1/package.tgz
-17 verbose lock tar:///Users/tonyspiro/.npm/gulp-mamp/0.0.1/package.tgz /Users/tonyspiro/.npm/1c085d8a--npm-gulp-mamp-0-0-1-package-tgz.lock
-18 silly lockFile 1f1177db-tar tar://.
-19 silly lockFile 1f1177db-tar tar://.
-20 silly lockFile 1c085d8a--npm-gulp-mamp-0-0-1-package-tgz tar:///Users/tonyspiro/.npm/gulp-mamp/0.0.1/package.tgz
-21 silly lockFile 1c085d8a--npm-gulp-mamp-0-0-1-package-tgz tar:///Users/tonyspiro/.npm/gulp-mamp/0.0.1/package.tgz
-22 silly lockFile 26ff0fd0-piro-npm-gulp-mamp-0-0-1-package /Users/tonyspiro/.npm/gulp-mamp/0.0.1/package
-23 verbose lock /Users/tonyspiro/.npm/gulp-mamp/0.0.1/package /Users/tonyspiro/.npm/26ff0fd0-piro-npm-gulp-mamp-0-0-1-package.lock
-24 silly lockFile 26ff0fd0-piro-npm-gulp-mamp-0-0-1-package /Users/tonyspiro/.npm/gulp-mamp/0.0.1/package
-25 silly lockFile 26ff0fd0-piro-npm-gulp-mamp-0-0-1-package /Users/tonyspiro/.npm/gulp-mamp/0.0.1/package
-26 silly lockFile 3a52ce78- .
-27 silly lockFile 3a52ce78- .
-28 silly publish { name: 'gulp-mamp',
-28 silly publish   version: '0.0.1',
-28 silly publish   description: 'Gulp MAMP alows you to configure, start and stop your mamp server from the terminal.',
-28 silly publish   main: 'index.js',
-28 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
-28 silly publish   keywords: [ 'gulpfriendly', 'gulp', 'MAMP', 'php' ],
-28 silly publish   author:
-28 silly publish    { name: 'Tony Spiro',
-28 silly publish      email: 'tspiro@tonyspiro.com',
-28 silly publish      url: 'http://tonyspiro.com/' },
-28 silly publish   license: 'ISC',
-28 silly publish   readme: '# Gulp MAMP\n\n> Gulp MAMP allows you to configure, start and stop your MAMP server from the terminal.\n\n```shell\nnpm install gulp-mamp\n```\n\n## The "mamp" task\n\n### The Goods\nConfigure your site_path and port and you are good to go.  Your gulpfile.js should look like this:\n\n```js\n/* !!!! CONFIGURE !!!!\n================================ */\nvar options = {};\noptions.port = 8888;\noptions.site_path = \'/your/full/site/path\'; // something like /Users/username/sites/mymampsite \n\n// Modules\nvar gulp = require(\'gulp\');\nvar mamp = require(\'gulp-mamp\');\n\ngulp.task(\'config\', function(cb){\n  mamp(options, \'config\', cb);\n});\n\ngulp.task(\'start\', function(cb){\n  mamp(options, \'start\', cb);\n});\n\ngulp.task(\'stop\', function(cb){\n  mamp(options, \'stop\', cb);\n});\n```\n\n### Getting Started (and Stopped!)\nOnce you have your gulpfile.js file configged, you can run the following commands to config, start and stop MAMP.\n```\ngulp config\ngulp start\ngulp stop\n```\n',
-28 silly publish   readmeFilename: 'README.md',
-28 silly publish   gitHead: '72ee719b1b9026d304c86775d1eb9b0cf0609f85',
-28 silly publish   _id: 'gulp-mamp@0.0.1',
-28 silly publish   _shasum: '4aead796be0bc17a3e7d9aeff9d7e45eac34d0e7',
-28 silly publish   _from: '.' }
-29 verbose request where is /gulp-mamp
-30 verbose request registry https://registry.npmjs.org/
-31 verbose request id a66169a3e18d128d
-32 verbose url raw /gulp-mamp
-33 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-mamp' ]
-34 verbose url resolved https://registry.npmjs.org/gulp-mamp
-35 verbose request where is https://registry.npmjs.org/gulp-mamp
-36 info trying registry request attempt 1 at 15:27:19
-37 http PUT https://registry.npmjs.org/gulp-mamp
-38 http 403 https://registry.npmjs.org/gulp-mamp
-39 verbose headers { date: 'Tue, 24 Feb 2015 21:27:20 GMT',
-39 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-39 verbose headers   'content-type': 'application/json',
-39 verbose headers   'cache-control': 'max-age=60',
-39 verbose headers   'content-length': '3297',
-39 verbose headers   'accept-ranges': 'bytes',
-39 verbose headers   via: '1.1 varnish',
-39 verbose headers   'x-served-by': 'cache-ord1733-ORD',
-39 verbose headers   'x-cache': 'MISS',
-39 verbose headers   'x-cache-hits': '0',
-39 verbose headers   'x-timer': 'S1424813239.909238,VS0,VE299',
-39 verbose headers   'keep-alive': 'timeout=10, max=50',
-39 verbose headers   connection: 'Keep-Alive' }
-40 error publish Failed PUT 403
-41 error Error: forbidden cannot modify pre-existing version: 0.0.1
-41 error old={"name":"gulp-mamp","version":"0.0.1","description":"Gulp MAMP alows you to configure, start and stop your mamp server from the terminal.","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"keywords":["Gulp","MAMP"],"author":{"name":"Tony Spiro","email":"tspiro@tonyspiro.com","url":"http://tonyspiro.com/"},"license":"ISC","repository":{"type":"git","url":"git://github.com/tonyspiro/gulp-mamp.git"},"bugs":{"url":"https://github.com/tonyspiro/gulp-mamp/issues"},"homepage":"https://github.com/tonyspiro/gulp-mamp","_id":"gulp-mamp@0.0.1","_shasum":"fdac5f08ee82e651b395109b45b36cffc4d2994e","_from":".","_npmVersion":"1.4.9","_npmUser":{"name":"tonyspiro","email":"tspiro@tonyspiro.com"},"maintainers":[{"name":"tonyspiro","email":"tspiro@tonyspiro.com"}],"dist":{"shasum":"fdac5f08ee82e651b395109b45b36cffc4d2994e","tarball":"http://registry.npmjs.org/gulp-mamp/-/gulp-mamp-0.0.1.tgz"}}
-41 error new={"name":"gulp-mamp","version":"0.0.1","description":"Gulp MAMP alows you to configure, start and stop your mamp server from the terminal.","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"keywords":["gulpfriendly","gulp","MAMP","php"],"author":{"name":"Tony Spiro","email":"tspiro@tonyspiro.com","url":"http://tonyspiro.com/"},"license":"ISC","readme":"# Gulp MAMP\u000a\u000a> Gulp MAMP allows you to configure, start and stop your MAMP server from the terminal.\u000a\u000a```shell\u000anpm install gulp-mamp\u000a```\u000a\u000a## The \"mamp\" task\u000a\u000a### The Goods\u000aConfigure your site_path and port and you are good to go.  Your gulpfile.js should look like this:\u000a\u000a```js\u000a/* !!!! CONFIGURE !!!!\u000a================================ */\u000avar options = {};\u000aoptions.port = 8888;\u000aoptions.site_path = '/your/full/site/path'; // something like /Users/username/sites/mymampsite \u000a\u000a// Modules\u000avar gulp = require('gulp');\u000avar mamp = require('gulp-mamp');\u000a\u000agulp.task('config', function(cb){\u000a  mamp(options, 'config', cb);\u000a});\u000a\u000agulp.task('start', function(cb){\u000a  mamp(options, 'start', cb);\u000a});\u000a\u000agulp.task('stop', function(cb){\u000a  mamp(options, 'stop', cb);\u000a});\u000a```\u000a\u000a### Getting Started (and Stopped!)\u000aOnce you have your gulpfile.js file configged, you can run the following commands to config, start and stop MAMP.\u000a```\u000agulp config\u000agulp start\u000agulp stop\u000a```\u000a","readmeFilename":"README.md","gitHead":"72ee719b1b9026d304c86775d1eb9b0cf0609f85","_id":"gulp-mamp@0.0.1","_shasum":"4aead796be0bc17a3e7d9aeff9d7e45eac34d0e7","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"tonyspiro","email":"tspiro@tonyspiro.com"},"maintainers":[{"name":"tonyspiro","email":"tspiro@tonyspiro.com"}],"dist":{"shasum":"4aead796be0bc17a3e7d9aeff9d7e45eac34d0e7","tarball":"http://registry.npmjs.org/gulp-mamp/-/gulp-mamp-0.0.1.tgz"}}: gulp-mamp
-41 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
-41 error     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
-41 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:236:22)
-41 error     at Request.emit (events.js:98:17)
-41 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1142:14)
-41 error     at Request.emit (events.js:117:20)
-41 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1096:12)
-41 error     at IncomingMessage.emit (events.js:117:20)
-41 error     at _stream_readable.js:943:16
-41 error     at process._tickCallback (node.js:419:13)
-42 error If you need help, you may report this *entire* log,
-42 error including the npm and node versions, at:
-42 error     <http://github.com/npm/npm/issues>
-43 error System Darwin 14.1.0
-44 error command "node" "/usr/local/bin/npm" "publish"
-45 error cwd /Users/tonyspiro/github-repos/gulp-mamp
-46 error node -v v0.10.33
-47 error npm -v 1.4.28
-48 verbose exit [ 1, true ]
+4 silly package data undefined
+5 info init written successfully
+6 error Error: Invalid version: ".0.4"
+6 error     at Object.module.exports.fixVersionField (/usr/local/lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/fixer.js:183:13)
+6 error     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/normalize.js:30:38
+6 error     at Array.forEach (native)
+6 error     at normalize (/usr/local/lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/lib/normalize.js:29:15)
+6 error     at final (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:342:33)
+6 error     at then (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:126:33)
+6 error     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:331:40
+6 error     at evalmachine.<anonymous>:271:14
+6 error     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:102:5
+6 error     at Object.oncomplete (evalmachine.<anonymous>:107:15)
+7 error If you need help, you may report this *entire* log,
+7 error including the npm and node versions, at:
+7 error     <http://github.com/npm/npm/issues>
+8 error System Darwin 14.1.0
+9 error command "node" "/usr/local/bin/npm" "init"
+10 error cwd /Users/tonyspiro/github-repos/gulp-mamp
+11 error node -v v0.10.33
+12 error npm -v 1.4.28
+13 verbose exit [ 1, true ]
