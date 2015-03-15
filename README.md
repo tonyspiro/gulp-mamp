@@ -1,4 +1,5 @@
 # Gulp MAMP
+![Image of Travis](https://travis-ci.org/tonyspiro/gulp-mamp.svg?branch=master)
 
 > Gulp MAMP allows you to configure, start and stop your MAMP server from the terminal.
 
