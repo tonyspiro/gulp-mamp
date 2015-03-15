@@ -2,10 +2,10 @@
 var exec = require('child_process').exec;
 
 it('should start MAMP', function (cb) {
-	var command = '/Applications/MAMP/bin/start.sh';
+	var command = 'npm install';
 	exec(command, function(err) {
     if (err) return cb(err); // return error
-    console.log('Starting mamp server');
+    console.log('Installing');
     return cb();
   });
 });
