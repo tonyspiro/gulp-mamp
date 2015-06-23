@@ -2,13 +2,13 @@
 # This is the main Apache HTTP server configuration file.  It contains the
 # configuration directives that give the server its instructions.
 # See <URL:http://httpd.apache.org/docs/2.2> for detailed information.
-# In particular, see 
+# In particular, see
 # <URL:http://httpd.apache.org/docs/2.2/mod/directives.html>
 # for a discussion of each configuration directive.
 #
 # Do NOT simply read the instructions in here without understanding
 # what they do.  They're here only as hints or reminders.  If you are unsure
-# consult the online docs. You have been warned.  
+# consult the online docs. You have been warned.
 #
 # Configuration and logfile names: If the filenames you specify for many
 # of the server's control files begin with "/" (or "drive:/" for Win32), the
@@ -41,7 +41,7 @@ PidFile logs/httpd.pid
 # ports, instead of the default. See also the <VirtualHost>
 # directive.
 #
-# Change this to Listen on specific IP addresses as shown below to 
+# Change this to Listen on specific IP addresses as shown below to
 # prevent Apache from glomming onto all bound IP addresses.
 #
 #Listen 12.34.56.78:80
@@ -80,7 +80,6 @@ LoadModule dbd_module modules/mod_dbd.so
 LoadModule bucketeer_module modules/mod_bucketeer.so
 LoadModule dumpio_module modules/mod_dumpio.so
 LoadModule echo_module modules/mod_echo.so
-LoadModule example_module modules/mod_example.so
 LoadModule case_filter_module modules/mod_case_filter.so
 LoadModule case_filter_in_module modules/mod_case_filter_in.so
 LoadModule reqtimeout_module modules/mod_reqtimeout.so
@@ -131,8 +130,9 @@ LoadModule alias_module modules/mod_alias.so
 LoadModule rewrite_module modules/mod_rewrite.so
 LoadModule perl_module modules/mod_perl.so
 LoadModule wsgi_module modules/mod_wsgi.so
+LoadModule xsendfile_module modules/mod_xsendfile.so
 
-LoadModule php5_module        /Applications/MAMP/bin/php/php5.6.2/modules/libphp5.so
+LoadModule php5_module        /Applications/MAMP/bin/php/php5.6.10/modules/libphp5.so
 
 #
 AddType application/x-httpd-php .php .phtml
@@ -141,7 +141,7 @@ AddType application/x-httpd-php .php .phtml
 <IfModule !mpm_winnt_module>
 #
 # If you wish httpd to run as a different user or group, you must run
-# httpd as root initially and it will switch.  
+# httpd as root initially and it will switch.
 #
 # User/Group: The name (or #number) of the user/group to run httpd as.
 # It is usually good practice to create a dedicated user and group for
@@ -151,6 +151,10 @@ User $user
 Group #-1
 
 </IfModule>
+</IfModule>
+
+<IfModule xsendfile_module>
+	XSendFile on
 </IfModule>
 
 # 'Main' server configuration
@@ -192,10 +196,10 @@ DocumentRoot "$path"
 #
 # Each directory to which Apache has access can be configured with respect
 # to which services and features are allowed and/or disabled in that
-# directory (and its subdirectories). 
+# directory (and its subdirectories).
 #
-# First, we configure the "default" to be a very restrictive set of 
-# features.  
+# First, we configure the "default" to be a very restrictive set of
+# features.
 #
 <Directory />
     Options Indexes FollowSymLinks
@@ -240,6 +244,7 @@ DocumentRoot "$path"
     Order allow,deny
     Allow from all
 
+    XSendFilePath "$path"
 </Directory>
 
 #
@@ -261,14 +266,14 @@ DocumentRoot "$path"
 
 #
 # AccessFileName: The name of the file to look for in each directory
-# for additional configuration directives.  See also the AllowOverride 
+# for additional configuration directives.  See also the AllowOverride
 # directive.
 #
 AccessFileName .htaccess
 
 #
-# The following lines prevent .htaccess and .htpasswd files from being 
-# viewed by Web clients. 
+# The following lines prevent .htaccess and .htpasswd files from being
+# viewed by Web clients.
 #
 <FilesMatch "^\.ht">
     Order allow,deny
@@ -328,8 +333,8 @@ LogLevel error
 
 <IfModule alias_module>
     #
-    # Redirect: Allows you to tell clients about documents that used to 
-    # exist in your server's namespace, but do not anymore. The client 
+    # Redirect: Allows you to tell clients about documents that used to
+    # exist in your server's namespace, but do not anymore. The client
     # will make a new request for the document at its new location.
     # Example:
     # Redirect permanent /foo http://www.example.com/bar
@@ -348,69 +353,69 @@ LogLevel error
 	# We include the /icons/ alias for FancyIndexed directory listings.  If you
 	# do not use FancyIndexing, you may comment this out.
 	#
-	
+
 	Alias /favicon.ico "/Applications/MAMP/bin/favicon.ico"
-	
+
 	Alias /icons/ "/Applications/MAMP/Library/icons/"
-	
+
 	<Directory "/Applications/MAMP/Library/icons">
 		Options Indexes MultiViews
 		AllowOverride None
 		Order allow,deny
 		Allow from all
 	</Directory>
-	
+
 	Alias /phpMyAdmin "/Applications/MAMP/bin/phpMyAdmin"
 	Alias /phpmyadmin "/Applications/MAMP/bin/phpMyAdmin"
-	
+
 	<Directory "/Applications/MAMP/bin/phpMyAdmin">
 		Options Indexes MultiViews
 		AllowOverride None
 		Order allow,deny
 		Allow from all
 	</Directory>
-	
+
 	Alias /phpPgAdmin "/Applications/MAMP/bin/phpPgAdmin"
 	Alias /phppgadmin "/Applications/MAMP/bin/phpPgAdmin"
-	
+
 	<Directory "/Applications/MAMP/bin/phpPgAdmin">
 		Options Indexes MultiViews
 		AllowOverride None
 		Order allow,deny
 		Allow from all
 	</Directory>
-	
+
 	Alias /phpLiteAdmin "/Applications/MAMP/bin/phpLiteAdmin"
 	Alias /phpliteadmin "/Applications/MAMP/bin/phpLiteAdmin"
-	
+
 	<Directory "/Applications/MAMP/bin/phpLiteAdmin">
 		Options Indexes MultiViews
 		AllowOverride None
 		Order allow,deny
 		Allow from all
 	</Directory>
-	
+
 	Alias /SQLiteManager "/Applications/MAMP/bin/SQLiteManager"
 	Alias /sqlitemanager "/Applications/MAMP/bin/SQLiteManager"
-	
+
 	<Directory "/Applications/MAMP/bin/SQLiteManager">
 		Options Indexes MultiViews
 		AllowOverride None
 		Order allow,deny
 		Allow from all
 	</Directory>
-	
+
 	Alias /MAMP "/Applications/MAMP/bin/mamp"
-	
+
 	<Directory "/Applications/MAMP/bin/mamp">
 		Options Indexes MultiViews
 		AllowOverride None
 		Order allow,deny
 		Allow from all
 	</Directory>
-	
+
     #
-    # ScriptAlias: This controls which directories contain server scripts. 
+    # ScriptAlias: This controls which directories contain server scripts.
     # ScriptAliases are essentially the same as Aliases, except that
     # documents in the target directory are treated as applications and
     # run by the server when requested rather than as documents sent to the
@@ -531,10 +536,10 @@ DefaultType text/plain
 #
 
 #
-# EnableMMAP and EnableSendfile: On systems that support it, 
+# EnableMMAP and EnableSendfile: On systems that support it,
 # memory-mapping or the sendfile syscall is used to deliver
 # files.  This usually improves server performance, but must
-# be turned off when serving from networked-mounted 
+# be turned off when serving from networked-mounted
 # filesystems or if support for these functions is otherwise
 # broken on your system.
 #
@@ -543,9 +548,9 @@ DefaultType text/plain
 
 # Supplemental configuration
 #
-# The configuration files in the /Applications/MAMP/conf/apache/extra/ directory can be 
-# included to add extra features or to modify the default configuration of 
-# the server, or you may simply copy their contents here and change as 
+# The configuration files in the /Applications/MAMP/conf/apache/extra/ directory can be
+# included to add extra features or to modify the default configuration of
+# the server, or you may simply copy their contents here and change as
 # necessary.
 
 # Server-pool management (MPM specific)
@@ -588,8 +593,8 @@ DefaultType text/plain
 <IfModule ssl_module>
 SSLRandomSeed startup file:/dev/urandom 1024
 SSLRandomSeed connect file:/dev/urandom 1024
-    
+
 #
 # Uncomment the next line if Apache should not accept SSLv3 connections, to learn more google for "POODLE SSLv3".
-# SSLProtocol All -SSLv2 -SSLv3 
+# SSLProtocol All -SSLv2 -SSLv3
 </IfModule>
