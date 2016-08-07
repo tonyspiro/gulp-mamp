@@ -1,0 +1,99 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.5.2
+3 info using node@v4.1.2
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/tonyspiro/github-repos/gulp-mamp',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/tonyspiro/.npm/gulp-mamp/0.0.4/package.tgz not in flight; packing
+9 info lifecycle gulp-mamp@0.0.4~prepublish: gulp-mamp@0.0.4
+10 silly lifecycle gulp-mamp@0.0.4~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ '/Users/tonyspiro/.npm/gulp-mamp/0.0.4/package.tgz',
+11 verbose tar pack   '/Users/tonyspiro/github-repos/gulp-mamp' ]
+12 verbose tarball /Users/tonyspiro/.npm/gulp-mamp/0.0.4/package.tgz
+13 verbose folder /Users/tonyspiro/github-repos/gulp-mamp
+14 verbose addLocalTarball adding from inside cache /Users/tonyspiro/.npm/gulp-mamp/0.0.4/package.tgz
+15 silly cache afterAdd gulp-mamp@0.0.4
+16 verbose afterAdd /Users/tonyspiro/.npm/gulp-mamp/0.0.4/package/package.json not in flight; writing
+17 verbose afterAdd /Users/tonyspiro/.npm/gulp-mamp/0.0.4/package/package.json written
+18 silly publish { name: 'gulp-mamp',
+18 silly publish   version: '0.0.4',
+18 silly publish   description: 'Gulp MAMP alows you to configure, start and stop your mamp server from the terminal.',
+18 silly publish   main: 'index.js',
+18 silly publish   scripts: { test: 'mocha' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+https://github.com/tonyspiro/gulp-mamp.git' },
+18 silly publish   keywords: [ 'gulpplugin', 'gulpfriendly', 'gulp', 'MAMP', 'php' ],
+18 silly publish   author:
+18 silly publish    { name: 'Tony Spiro',
+18 silly publish      email: 'tspiro@tonyspiro.com',
+18 silly publish      url: 'http://tonyspiro.com/' },
+18 silly publish   license: 'ISC',
+18 silly publish   devDependencies: { mocha: '~1.17.1' },
+18 silly publish   bugs: { url: 'https://github.com/tonyspiro/gulp-mamp/issues' },
+18 silly publish   homepage: 'https://github.com/tonyspiro/gulp-mamp',
+18 silly publish   readme: '# Gulp MAMP\n[![Build Status](https://travis-ci.org/tonyspiro/gulp-mamp.svg?branch=master)](https://travis-ci.org/tonyspiro/gulp-mamp)\n\n> Gulp MAMP allows you to configure, start and stop your MAMP server from the terminal.\n\n```shell\nnpm install gulp-mamp\n```\n\n## The "mamp" task\n\n### The Goods\nConfigure your site_path and port and you are good to go.  Your gulpfile.js should look like this:\n\n```js\n/* !!!! CONFIGURE !!!!\n================================ */\nvar options = {};\noptions.user = \'yourusername\';\noptions.port = 8888;\noptions.site_path = \'/your/full/site/path\'; // something like /Users/username/sites/mymampsite \n\n// Modules\nvar gulp = require(\'gulp\');\nvar mamp = require(\'gulp-mamp\');\n\ngulp.task(\'config\', function(cb){\n    mamp(options, \'config\', cb);\n});\n\ngulp.task(\'start\', function(cb){\n    mamp(options, \'start\', cb);\n});\n\ngulp.task(\'stop\', function(cb){\n    mamp(options, \'stop\', cb);\n});\n\ngulp.task(\'mamp\', [\'config\', \'start\']);\n```\n\n### Getting Started (and Stopped!)\nOnce you have your gulpfile.js file configged, you can run the following commands to config, start and stop MAMP.\n```\ngulp mamp\ngulp stop\n```\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: 'e53fa4dd1425ecb1e6a32a2e9b9ce58014d310ba',
+18 silly publish   _id: 'gulp-mamp@0.0.4',
+18 silly publish   _shasum: '597b6da2d22fc7e9b3e2261fdbb19cad0e8f62a7',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name gulp-mamp
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry http://registry.npmjs.org/
+23 silly mapToRegistry uri http://registry.npmjs.org/gulp-mamp
+24 verbose publish registryBase http://registry.npmjs.org/
+25 silly publish uploading /Users/tonyspiro/.npm/gulp-mamp/0.0.4/package.tgz
+26 verbose request uri http://registry.npmjs.org/gulp-mamp
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 9:41:40 PM
+29 verbose request using bearer token for auth
+30 verbose request id e2c793b9872fd246
+31 http request PUT http://registry.npmjs.org/gulp-mamp
+32 http 403 http://registry.npmjs.org/gulp-mamp
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=300',
+33 verbose headers   'content-length': '95',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Sun, 07 Aug 2016 02:41:41 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-dfw1822-DFW',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1470537700.570154,VS0,VE1142',
+33 verbose headers   vary: 'Accept-Encoding' }
+34 verbose request invalidating /Users/tonyspiro/.npm/registry.npmjs.org/gulp-mamp on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: "You cannot publish over the previously published version 0.0.4." : gulp-mamp
+36 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+36 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+36 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
+36 verbose stack     at emitTwo (events.js:87:13)
+36 verbose stack     at Request.emit (events.js:172:7)
+36 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1082:10)
+36 verbose stack     at emitOne (events.js:82:20)
+36 verbose stack     at Request.emit (events.js:169:7)
+36 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+37 verbose statusCode 403
+38 verbose pkgid gulp-mamp
+39 verbose cwd /Users/tonyspiro/github-repos/gulp-mamp
+40 error Darwin 15.3.0
+41 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+42 error node v4.1.2
+43 error npm  v3.5.2
+44 error code E403
+45 error "You cannot publish over the previously published version 0.0.4." : gulp-mamp
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]
