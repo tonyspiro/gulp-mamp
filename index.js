@@ -7,7 +7,7 @@ var fs = require('fs');
 module.exports = function (options, task, cb) {
 	var mamproot = "/Applications/MAMP/";
 	var sedoverride = "";
-	if (typeof options.mamproot !== 'undefined'){
+	if (typeof options.mamproot !== 'undefined' && mamproot != options.mamproot){
 		sedoverride = "%g' -e 's%" + mamproot + "%" + options.mamproot
 		mamproot = options.mamproot;
 		console.log("Overriding MAMP root with: " + mamproot);
