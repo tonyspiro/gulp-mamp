@@ -18,7 +18,9 @@ Configure your site_path and port and you are good to go.  Your gulpfile.js shou
 var options = {};
 options.user = 'yourusername';
 options.port = 8888;
-options.site_path = '/your/full/site/path'; // something like /Users/username/sites/mymampsite 
+options.site_path = '/your/full/site/path'; // something like /Users/username/sites/mymampsite
+options.mamproot = '/Applications/MAMP/';
+options.headless = true;
 
 // Modules
 var gulp = require('gulp');

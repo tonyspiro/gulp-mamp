@@ -132,7 +132,7 @@ LoadModule perl_module modules/mod_perl.so
 LoadModule wsgi_module modules/mod_wsgi.so
 LoadModule xsendfile_module modules/mod_xsendfile.so
 
-LoadModule php5_module        /Applications/MAMP/bin/php/php5.6.10/modules/libphp5.so
+LoadModule php7_module        /Applications/MAMP/bin/php/php7.1.8/modules/libphp7.so
 
 #
 AddType application/x-httpd-php .php .phtml
@@ -395,19 +395,19 @@ LogLevel error
 		Allow from all
 	</Directory>
 
-	Alias /SQLiteManager "/Applications/MAMP/bin/SQLiteManager"
-	Alias /sqlitemanager "/Applications/MAMP/bin/SQLiteManager"
+	Alias /MAMP "/Applications/MAMP/bin/mamp"
 
-	<Directory "/Applications/MAMP/bin/SQLiteManager">
+	<Directory "/Applications/MAMP/bin/mamp">
 		Options Indexes MultiViews
 		AllowOverride None
 		Order allow,deny
 		Allow from all
 	</Directory>
 
-	Alias /MAMP "/Applications/MAMP/bin/mamp"
+	Alias /adminer "/Applications/MAMP/bin/adminer"
 
-	<Directory "/Applications/MAMP/bin/mamp">
+	<Directory "/Applications/MAMP/bin/adminer">
+		DirectoryIndex adminer.php
 		Options Indexes MultiViews
 		AllowOverride None
 		Order allow,deny
